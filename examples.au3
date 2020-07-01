@@ -1,6 +1,6 @@
 #NoTrayIcon
 #include "lua.au3"
-#include "lua_dlls.au3"
+#include "lua53_dlls.au3"
 
 ; Initialize library
 _lua_Startup(_lua_ExtractDll())
@@ -122,7 +122,7 @@ _lua_setGlobal($pState, "data")
 $oData = Null
 
 ; execute lua script that will modify the table data
-$iRet = _luaL_doString($pState, 'for k, v in pairs(data) do data[k] = tostring(v) .. " [Modified by LUA code]" end')
+$iRet = _luaL_doString($pState, 'for k, v in pairs(data) do data[k] = tostring(v) .. " [Appended by LUA code]" end')
 If $iRet <> $LUA_OK Then
 	; read the error description on top of the stack
 	ConsoleWrite("!> Error: " & _lua_toString($pState, -1) & @CRLF)

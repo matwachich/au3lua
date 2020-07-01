@@ -25,9 +25,9 @@ Global $__gLua_hDLL = -1
 
 Const $LUA_VERSION_MAJOR = 5
 Const $LUA_VERSION_MINOR = 3
-Const $LUA_VERSION_NUM = 503 ; this is used by _luaL_checkversion to check if this UDF and DLLs versions are the same
-							 ; so, if you want to use a DLL of different version, you must change this constant
-							 ; and also the implementation of AutoIt wrappers if needed
+Const $LUA_VERSION_NUM   = 503 ; this is used by _luaL_checkversion to check if this UDF and DLLs versions are the same
+							   ; so, if you want to use a DLL of different version, you must change this constant
+							   ; and also the implementation of AutoIt wrappers if needed
 Const $LUA_VERSION_RELEASE = 5
 
 Const $LUA_VERSION = "Lua " & $LUA_VERSION_MAJOR & "." & $LUA_VERSION_MINOR
@@ -49,48 +49,48 @@ Func _lua_upvalueIndex($i)
 EndFunc   ;==>_lua_upvalueIndex
 
 ; thread status
-Const $LUA_OK = 0
-Const $LUA_YIELD = 1
-Const $LUA_ERRRUN = 2
+Const $LUA_OK        = 0
+Const $LUA_YIELD     = 1
+Const $LUA_ERRRUN    = 2
 Const $LUA_ERRSYNTAX = 3
-Const $LUA_ERRMEM = 4
-Const $LUA_ERRGCMM = 5
-Const $LUA_ERRERR = 6
+Const $LUA_ERRMEM    = 4
+Const $LUA_ERRGCMM   = 5
+Const $LUA_ERRERR    = 6
 
 ; basic types
-Const $LUA_TNONE = -1
-Const $LUA_TNIL = 0
-Const $LUA_TBOOLEAN = 1
+Const $LUA_TNONE          = -1
+Const $LUA_TNIL           = 0
+Const $LUA_TBOOLEAN       = 1
 Const $LUA_TLIGHTUSERDATA = 2
-Const $LUA_TNUMBER = 3
-Const $LUA_TSTRING = 4
-Const $LUA_TTABLE = 5
-Const $LUA_TFUNCTION = 6
-Const $LUA_TUSERDATA = 7
-Const $LUA_TTHREAD = 8
-Const $LUA_NUMTAGS = 9
+Const $LUA_TNUMBER        = 3
+Const $LUA_TSTRING        = 4
+Const $LUA_TTABLE         = 5
+Const $LUA_TFUNCTION      = 6
+Const $LUA_TUSERDATA      = 7
+Const $LUA_TTHREAD        = 8
+Const $LUA_NUMTAGS        = 9
 
 ; minimum Lua stack available to a C function
 Const $LUA_MINSTACK = 20
 
 ; predefined values in the registry
 Const $LUA_RIDX_MAINTHREAD = 1
-Const $LUA_RIDX_GLOBALS = 2
-Const $LUA_RIDX_LAST = $LUA_RIDX_GLOBALS
+Const $LUA_RIDX_GLOBALS    = 2
+Const $LUA_RIDX_LAST       = $LUA_RIDX_GLOBALS
 
-Const $LUA_OPADD = 0 ; ORDER TM, ORDER OP
-Const $LUA_OPSUB = 1
-Const $LUA_OPMUL = 2
-Const $LUA_OPMOD = 3
-Const $LUA_OPPOW = 4
-Const $LUA_OPDIV = 5
+Const $LUA_OPADD  = 0 ; ORDER TM, ORDER OP
+Const $LUA_OPSUB  = 1
+Const $LUA_OPMUL  = 2
+Const $LUA_OPMOD  = 3
+Const $LUA_OPPOW  = 4
+Const $LUA_OPDIV  = 5
 Const $LUA_OPIDIV = 6
 Const $LUA_OPBAND = 7
-Const $LUA_OPBOR = 8
+Const $LUA_OPBOR  = 8
 Const $LUA_OPBXOR = 9
-Const $LUA_OPSHL = 10
-Const $LUA_OPSHR = 11
-Const $LUA_OPUNM = 12
+Const $LUA_OPSHL  = 10
+Const $LUA_OPSHR  = 11
+Const $LUA_OPUNM  = 12
 Const $LUA_OPBNOT = 13
 
 Const $LUA_OPEQ = 0
@@ -99,15 +99,15 @@ Const $LUA_OPLE = 2
 
 ; Garbage collection function and options
 
-Const $LUA_GCSTOP = 0
-Const $LUA_GCRESTART = 1
-Const $LUA_GCCOLLECT = 2
-Const $LUA_GCCOUNT = 3
-Const $LUA_GCCOUNTB = 4
-Const $LUA_GCSTEP = 5
-Const $LUA_GCSETPAUSE = 6
+Const $LUA_GCSTOP       = 0
+Const $LUA_GCRESTART    = 1
+Const $LUA_GCCOLLECT    = 2
+Const $LUA_GCCOUNT      = 3
+Const $LUA_GCCOUNTB     = 4
+Const $LUA_GCSTEP       = 5
+Const $LUA_GCSETPAUSE   = 6
 Const $LUA_GCSETSTEPMUL = 7
-Const $LUA_GCISRUNNING = 9
+Const $LUA_GCISRUNNING  = 9
 
 ; -----------------
 ; HEADER: lauxlib.h
@@ -125,19 +125,19 @@ Const $LUA_PRELOAD_TABLE = "_PRELOAD"
 ;~ Const $LUAL_NUMSIZES = 8*16 + 8 ; (sizeof(lua_Integer)*16 + sizeof(lua_Number))
 
 ; predefined references
-Const $LUA_NOREF = -2
+Const $LUA_NOREF  = -2
 Const $LUA_REFNIL = -1
 
 ; standard library names
-Const $LUA_COLIBNAME = "coroutine"
-Const $LUA_TABLIBNAME = "table"
-Const $LUA_IOLIBNAME = "io"
-Const $LUA_OSLIBNAME = "os"
-Const $LUA_STRLIBNAME = "string"
+Const $LUA_COLIBNAME   = "coroutine"
+Const $LUA_TABLIBNAME  = "table"
+Const $LUA_IOLIBNAME   = "io"
+Const $LUA_OSLIBNAME   = "os"
+Const $LUA_STRLIBNAME  = "string"
 Const $LUA_UTF8LIBNAME = "utf8"
-Const $LUA_BITLIBNAME = "bit32"
+Const $LUA_BITLIBNAME  = "bit32"
 Const $LUA_MATHLIBNAME = "math"
-Const $LUA_DBLIBNAME = "debug"
+Const $LUA_DBLIBNAME   = "debug"
 Const $LUA_LOADLIBNAME = "package"
 
 ; =====================================================================================================================
@@ -151,13 +151,15 @@ Const $LUA_LOADLIBNAME = "package"
 ; Note that this function will work only if lua_dlls.au3 is included to the script.
 ; On error, or if lua_dlls.au3 is not included, empty string "" is returned (which is default parameter to _lua_Startup)
 ;
+; Extract lua dll to $sFolder, returning the full path of the extracted dll (can be used as parameter to _lua_Startup)
 Func _lua_ExtractDll($sFolder = @ScriptDir)
 	$sFolder = $sFolder & "\lua53_" & (@AutoItX64 ? "x64" : "x86") & ".dll"
-	Local $vRet = Call("_binFile_lua53_" & (@AutoItX64 ? "x64" : "x86") & "_dll", $sFolder)
+	Local $vRet = Call("__lua_binFile_lua53_" & (@AutoItX64 ? "x64" : "x86") & "_dll", $sFolder)
 	If Not $vRet Or (@error = 0xDEAD And @extended = 0xBEEF) Then Return ""
 	Return $sFolder
 EndFunc
 
+; Open lua dll
 Func _lua_Startup($sDllPath = "")
 	If $__gLua_hDLL == -1 Then
 		If Not $sDllPath Then
@@ -169,6 +171,7 @@ Func _lua_Startup($sDllPath = "")
 	Return 1
 EndFunc   ;==>_lua_Startup
 
+; Close lua dll
 Func _lua_Shutdown()
 	If $__gLua_hDLL <> -1 Then
 		DllClose($__gLua_hDLL)
@@ -187,6 +190,7 @@ EndFunc   ;==>_lua_Terminate
 ; - thread, userdata, lightuserdata, function => Pointer
 ; - table                                     => Array (if metafield __au3array found) or Scripting.Dictionary
 ;
+; Read the lua value at index $iIdx, and convert it to AutoIt value
 Func _au3Lua_readAny($pState, $iIdx, $bStringAsBinary = True)
 	$iIdx = _lua_absIndex($pState, $iIdx)
 	Switch _lua_type($pState, $iIdx)
@@ -247,6 +251,7 @@ EndFunc   ;==>_au3Lua_readAny
 ; - Scription.Dictionary => table[keys] = values
 ; - UserFunction         => cfunction
 ;
+; Pushes any AutoIt value to lua stack, converting it to the appropriate lua type (with nested types supported (arrays in tables...))
 Func _au3Lua_pushAny($pState, $vValue)
 	Switch VarGetType($vValue)
 		Case "Keyword"
